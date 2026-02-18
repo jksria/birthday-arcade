@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Mila's Birthday Arcade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="rotateWarning">
+  Please rotate device to landscape 🎀
+</div>
+
+<div id="home" class="screen active">
+  <h1>🎀 Mila's Birthday Arcade 🎀</h1>
+  <div class="card">
+    <button onclick="startGame('snow')">❄️ Snow Catch</button>
+    <button onclick="startGame('cake')">🎂 Cake Smash</button>
+    <button onclick="startGame('quiz')">👶 Know Mila?</button>
+    <button onclick="showLeaderboard()">🏆 Leaderboard</button>
+  </div>
+</div>
+
+<div id="snow" class="screen">
+  <h2>Snow Catch</h2>
+  <div class="scoreBar">
+    <span id="snowScore">Score: 0</span>
+  </div>
+  <canvas id="snowCanvas"></canvas>
+  <button class="back" onclick="goHome()">⬅ Back</button>
+</div>
+
+<div id="cake" class="screen">
+  <h2>Cake Smash</h2>
+
+  <div id="cakeWrapper">
+    <div id="cakeHitbox">
+      <div id="cake">🎂</div>
+    </div>
+  </div>
+
+  <div id="cakeScore">Smashes: 0</div>
+
+<button onclick="endCakeGame()">Submit Score</button>
+
+
+  <button class="back right" onclick="goHome()">⬅ Back</button>
+</div>
+
+
+<div id="quiz" class="screen">
+  <h2>How Well Do You Know Mila?</h2>
+  <div id="quizContainer"></div>
+  <button class="back right" onclick="goHome()">⬅ Back</button>
+</div>
+
+<div id="leaderboard" class="screen">
+  <h2>🏆 Leaderboard</h2>
+  <div id="leaderboardList"></div>
+  <button class="back" onclick="goHome()">⬅ Back</button>
+</div>
+
+<div id="nameModal" class="modal">
+  <div class="modalContent">
+    <h3>Enter Your Name</h3>
+    <input type="text" id="playerName" placeholder="Your Name"/>
+    <button onclick="saveScore()">Save</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
